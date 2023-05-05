@@ -274,7 +274,7 @@ extension Device {
 
     /// Return `true` if device has a dynamic island
     static public var hasDynamicIsland: Bool {
-        return (isPhone && (version == .phone14Pro || version == .phone14ProMax)) || (isPhone && isSimulator && screen == .inches_6_7)
+        return (isPhone && (version == .phone14Pro || version == .phone14ProMax)) || (isPhone && isSimulator && (screen == .inches_6_7 || screen == .inches_6_1))
     }
     // MARK: Version
 
