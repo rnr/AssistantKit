@@ -235,7 +235,7 @@ extension Device {
             return .pad
         } else if versionCode.starts(with: "iPod") {
             return .pod
-        } else if versionCode == "i386" || versionCode == "x86_64" {
+        } else if versionCode == "i386" || versionCode == "x86_64" || versionCode == "arm64" {
             return .simulator
         }
         return .unknown
