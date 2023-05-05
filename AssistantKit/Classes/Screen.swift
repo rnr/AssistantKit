@@ -192,7 +192,7 @@ extension Device {
         case 896:
             return ( scale == .x3 ? .inches_6_5 : .inches_6_1 )
             
-        case 926:
+        case 926, 932:
             return .inches_6_7
 
         case 1024:
@@ -206,6 +206,9 @@ extension Device {
 
         case 1366:
             return .inches_12_9
+        
+        case 852:
+            return .inches_6_1
 
         default:
             return .unknown
