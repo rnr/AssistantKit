@@ -47,6 +47,19 @@ public enum Version: String {
     case phone11Pro
     case phone11ProMax
     case phoneSE2
+    case phone12Pro
+    case phone12ProMax
+    case phone12Mini
+    case phone12
+    case phone13Pro
+    case phone13ProMax
+    case phone13Mini
+    case phone13
+    case phoneSE3
+    case phone14
+    case phone14Pro
+    case phone14ProMax
+    case phone14Plus
 
     case pad1
     case pad2
@@ -239,6 +252,10 @@ extension Device {
         return isPhone && (screen == .inches_5_8 || screen == .inches_6_1 || screen == .inches_6_5 || screen == .inches_5_4 || screen == .inches_5_5 || screen == .inches_6_7)
     }
 
+    /// Return `true` if device has a dynamic island
+    static public var hasDynamicIsland: Bool {
+        return isPhone && (version == .phone14Pro || version == .phone14ProMax)
+    }
     // MARK: Version
 
     static public var version: Version {
@@ -308,6 +325,35 @@ extension Device {
             return .phone11ProMax
         case "iPhone12,8":
             return .phoneSE2
+
+        case "iPhone13,3":
+            return .phone12Pro
+        case "iPhone13,4":
+            return .phone12ProMax
+        case "iPhone13,1":
+            return .phone12Mini
+        case "iPhone13,2":
+            return .phone12
+
+        case "iPhone14,2":
+            return .phone13Pro
+        case "iPhone14,3":
+            return .phone13ProMax
+        case "iPhone14,4":
+            return .phone13Mini
+        case "iPhone14,5":
+            return .phone13
+        case "iPhone14,6":
+            return .phoneSE3
+
+        case "iPhone14,7":
+            return .phone14
+        case "iPhone15,2":
+            return .phone14Pro
+        case "iPhone15,3":
+            return .phone14ProMax
+        case "iPhone14,8":
+            return .phone14Plus
 
         // Pads
         case "iPad1,1":
@@ -415,15 +461,15 @@ extension Version {
    public var readableName: String {
         switch self {
         case .phone4: return "iPhone 4"
-        case .phone4S:  return "iPhone 4s"
-        case .phone5:  return "iPhone 5"
-        case .phone5C:  return "iPhone 5C"
+        case .phone4S: return "iPhone 4s"
+        case .phone5: return "iPhone 5"
+        case .phone5C: return "iPhone 5C"
         case .phone5S: return "iPhone 5s"
         case .phone6: return "iPhone 6"
         case .phone6Plus: return "iPhone 6 Plus"
-        case .phone6S:  return "iPhone 6s"
+        case .phone6S: return "iPhone 6s"
         case .phone6SPlus: return "iPhone 6s Plus"
-        case .phoneSE:  return "iPhone SE"
+        case .phoneSE: return "iPhone SE"
         case .phone7: return "iPhone 7"
         case .phone7Plus: return "iPhone 7 Plus"
         case .phone8: return "iPhone 8"
@@ -434,12 +480,25 @@ extension Version {
         case .phoneXR: return "iPhone XR"
         case .phone11: return "iPhone 11"
         case .phone11Pro: return "iPhone 11 Pro"
-        case .phone11ProMax:  return "iPhone 11 Pro Max"
+        case .phone11ProMax: return "iPhone 11 Pro Max"
         case .phoneSE2: return "iPhone SE 2nd Gen"
+        case .phone12Pro: return "iPhone 12 Pro"
+        case .phone12ProMax: return "iPhone 12 Pro Max"
+        case .phone12Mini: return "iPhone 12 Mini"
+        case .phone12: return "iPhone 12"
+        case .phone13Pro: return "iPhone 13 Pro"
+        case .phone13ProMax: return "iPhone 13 Pro Max"
+        case .phone13Mini: return "iPhone 13 Mini"
+        case .phone13: return "iPhone 13"
+        case .phoneSE3: return "iPhone SE 3rd Gen"
+        case .phone14: return "iPhone 14"
+        case .phone14Pro: return "iPhone 14 Pro"
+        case .phone14ProMax: return "iPhone 14 Pro Max"
+        case .phone14Plus: return "iPhone 14 Plus"
             
         case .pad1: return "iPad"
         case .pad2: return "2nd Gen iPad"
-        case .padMini:  return "iPad Mini"
+        case .padMini: return "iPad Mini"
         case .pad3: return "3rd Gen iPad"
         case .pad4: return "4th Gen iPad"
         case .pad5: return "iPad (2017)"
@@ -447,7 +506,7 @@ extension Version {
         case .pad7: return "iPad 7th Gen 10.2-inch"
         case .padAir: return "iPad Air"
         case .padMini2: return "iPad mini Retina"
-        case .padAir2:  return "iPad Air 2"
+        case .padAir2: return "iPad Air 2"
         case .padMini3: return "iPad Mini 3"
         case .padMini4: return "iPad Mini 4"
         case .padMini5: return "iPad Mini 5th Gen"
