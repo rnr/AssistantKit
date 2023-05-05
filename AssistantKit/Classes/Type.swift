@@ -122,7 +122,8 @@ public enum Version: String {
         case .phone6,
              .phone6S,
              .phone7,
-             .phone8:
+             .phone8,
+             .phoneSE3:
             return .inches_4_7
             
         case .phone6Plus,
@@ -140,16 +141,35 @@ public enum Version: String {
 
         case .phoneXSMax:
             return .inches_6_5
-            
-        case .phone11:
+
+        case .phone11,
+             .phone12Pro,
+             .phone12,
+             .phone13Pro,
+             .phone13,
+             .phone14,
+             .phone14Pro:
             return .inches_6_1
+
         case .phone11Pro:
             return .inches_5_8
+
         case .phone11ProMax:
             return .inches_6_5
+
         case .phoneSE2:
             return .inches_4_7
-            
+
+        case .phone12ProMax,
+             .phone13ProMax,
+             .phone14ProMax,
+             .phone14Plus:
+            return .inches_6_7
+
+        case .phone12Mini,
+             .phone13Mini:
+            return .inches_5_4
+
         case .padMini,
              .padMini2,
              .padMini3,
